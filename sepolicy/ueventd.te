@@ -1,0 +1,2 @@
+allow ueventd camera_socket:chr_file { create setattr };
+allow ueventd vibe_dev:file { getattr setattr };
