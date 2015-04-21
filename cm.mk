@@ -22,8 +22,6 @@
 
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
-
 $(call inherit-product, device/htc/a11/full_a11.mk)
 
 # Device naming

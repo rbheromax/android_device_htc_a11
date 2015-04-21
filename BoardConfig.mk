@@ -94,9 +94,6 @@ TARGET_PROVIDES_LIBLIGHT := true
 # Logging
 COMMON_GLOBAL_CFLAGS += -DHTCLOG -DMOTOROLA_LOG
 
-# NFC
-BOARD_NFC_CHIPSET := pn547
-
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 
@@ -147,6 +144,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
+include vendor/cm/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/htc/a11/sepolicy
 
 BOARD_SEPOLICY_UNION += \
