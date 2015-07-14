@@ -1,6 +1,6 @@
 Copyright 2014 - The CyanogenMod Project
 
-Device configuration for HTC Desire 510("a11")
+Device configuration for HTC Desire 510 ("a11")
 =============================================
 <center>
 **Quick Spec Sheet**
