@@ -94,7 +94,7 @@ void vendor_load_properties()
 
     if (strstr(bootmid, "OPCV1000")) {
         /* a11chl */
-        cdma_properties("1", "8", "310120", "Virgin Mobile");
+        cdma_properties("1", "8", "310120", "Sprint");
         property_set("ro.build.fingerprint", "htc/sprint_wwe_vm/htc_a11chl:4.4.2/KOT49H/338737.1:user/release-keys");
         property_set("ro.build.description", "1.13.652.1 CL338737 release-keys");
         property_set("ro.product.model", "HTC Desire 510");
