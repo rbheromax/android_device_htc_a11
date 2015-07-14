@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export DEVICE=a5
+export DEVICE=a11
 export VENDOR=htc
 
 OUTDIR=vendor/$VENDOR/$DEVICE
