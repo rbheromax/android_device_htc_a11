@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-""" Custom OTA commands for a5 devices """
+""" Custom OTA commands for a11 devices """
 
 def FullOTA_InstallEnd(info):
   info.script.Mount("/system")
