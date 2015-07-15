@@ -25,8 +25,20 @@ TARGET_SCREEN_HEIGHT := 854
 TARGET_SCREEN_WIDTH := 480
 
 # Device uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
+PRODUCT_AAPT_CONFIG := normal large xlarge hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
+
+# Set the screen density
+PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=240
+
+# USB - Only for debugging purposes
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.adb.secure=0 \
+    ro.secure=0 \
+    ro.debuggable=1
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp,adb
 
 # Ramdisk
 PRODUCT_PACKAGES += \
