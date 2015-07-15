@@ -16,14 +16,14 @@ import com.android.internal.telephony.dataconnection.DataProfile;
 
 import java.util.ArrayList;
 
-public class A5RIL extends RIL implements CommandsInterface {
+public class A11RIL extends RIL implements CommandsInterface {
 
     private static final int RIL_REQUEST_HTC_GET_DATA_CALL_PROFILE = 5505;
     private static final int RIL_REQUEST_HTC_SET_UICC_SUBSCRIPTION = 5506;
     private static final int RIL_REQUEST_HTC_ALLOW_DATA = 5507;
     private static final int RIL_UNSOL_HTC_UICC_SUBSCRIPTION_STATUS_CHANGED = 5760;
 
-    public A5RIL(Context paramContext, int paramInt1,
+    public A11RIL(Context paramContext, int paramInt1,
            int paramInt2, Integer paramInteger) {
          super(paramContext, paramInt1, paramInt2, paramInteger);
          mQANElements = 5;
@@ -538,8 +538,7 @@ public class A5RIL extends RIL implements CommandsInterface {
         }
     }
 
-    private Object
-   responseHardwareConfig(Parcel p) {
+   /* private Object responseHardwareConfig(Parcel p) {
       int num;
       ArrayList<HardwareConfig> response;
       HardwareConfig hw;
@@ -574,9 +573,9 @@ public class A5RIL extends RIL implements CommandsInterface {
       }
 
       return response;
-   }
+   } */
 
-    private ArrayList<ApnSetting> responseGetDataCallProfile(Parcel p) {
+   /* private ArrayList<ApnSetting> responseGetDataCallProfile(Parcel p) {
         int nProfiles = p.readInt();
         if (RILJ_LOGD) riljLog("# data call profiles:" + nProfiles);
 
@@ -596,10 +595,9 @@ public class A5RIL extends RIL implements CommandsInterface {
         }
 
         return response;
-    }
+    } */
 
-    private Object
-    responseICC_IOBase64(Parcel p) {
+   /* private Object responseICC_IOBase64(Parcel p) {
         int sw1, sw2;
         Message ret;
 
@@ -615,6 +613,6 @@ public class A5RIL extends RIL implements CommandsInterface {
 
 
         return new IccIoResult(sw1, sw2, android.util.Base64.decode(s, android.util.Base64.DEFAULT));
-    }
+    } */
 
 }
