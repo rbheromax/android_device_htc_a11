@@ -25,20 +25,11 @@ TARGET_SCREEN_HEIGHT := 854
 TARGET_SCREEN_WIDTH := 480
 
 # Device uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := normal large xlarge hdpi xhdpi
+PRODUCT_AAPT_CONFIG := small normal large xlarge hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # Set the screen density
 PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=240
-
-# USB - Only for debugging purposes
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.adb.secure=0 \
-    ro.secure=0 \
-    ro.debuggable=1
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp,adb
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -153,7 +144,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_ffmpeg.xml:system/etc/media_codecs_ffmpeg.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
