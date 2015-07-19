@@ -18,9 +18,6 @@ fi
 if [ $variant == "chl" ]; then
 	# I think we should remove nothing for now and call it good. :)
 
-	for i in $NFCFILES; do
-		rm -rf /system/$i
-	done
 	variant="gsm"
 fi
 
