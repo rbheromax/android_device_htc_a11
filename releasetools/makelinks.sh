@@ -15,7 +15,7 @@ if [ $variant == "gsm" ]; then
 	rm -f /system/blobs/gsm/bin/rild
 fi
 
-if [ $variant == "dualsim" ]; then
+if [ $variant == "chl" ]; then
 	# dualsim variant uses prebuilt ril blobs
 	rm -f /system/bin/rild
 	rm -f /system/lib/libril.so
