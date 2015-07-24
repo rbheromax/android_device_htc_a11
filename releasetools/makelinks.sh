@@ -1,27 +1,33 @@
 #!/sbin/sh
 
-# set -e
+set -e
 
-# modelid=`getprop ro.boot.mid`
+modelid=`getprop ro.boot.mid`
 
-# case $modelid in
-# 	OPCV1000|OPCV2000)		variant="chl" ;;
-#	*)				variant="gsm" ;;
-# esac
+case $modelid in
+	OPCV1000|OPCV2000)		variant="chl" ;;
+	*)				variant="gsm" ;;
+esac
 
-# if [ $variant == "gsm" ]; then
+if [ $variant == "gsm" ]; then
 	# remove prebuilt ril blobs
-# 	rm -rf /system/blobs/gsm/lib
-#	rm -f /system/blobs/gsm/bin/rild
-#  fi
+	rm -rf /system/blobs/gsm/lib
+	rm -f /system/blobs/gsm/bin/rild
+fi
 
-# if [ $variant == "chl" ]; then
-	# I think we should remove nothing for now and call it good. :)
+if [ $variant == "chl" ]; then
+	# dualsim variant uses prebuilt ril blobs
+	rm -f /system/bin/rild
+	rm -f /system/lib/libril.so
+	NFCFILES="app/NfcNci lib/libnfc-nci.so lib/libnfc_nci_jni.so lib/libnfc_ndef.so lib/hw/nfc_nci.pn54x.default.so etc/libnfc-nxp.conf permissions/com.cyanogenmod.nfc.enhanced.xml etc/permissions/com.android.nfc_extras.xml etc/permissions/android.hardware.nfc.xml etc/libnfc-brcm.conf etc/nfcee_access.xml framework/com.android.nfc_extras.jar priv-app/Tag vendor/firmware/libpn547_fw.so"
 
-# 	variant="gsm"
-# fi
+	for i in $NFCFILES; do
+		rm -rf /system/$i
+	done
+	variant="gsm"
+fi
 
-# basedir="/system/blobs/$variant/"
-# cd $basedir
-# chmod 755 bin/*
-# find . -type f | while read file; do ln -s $basedir$file /system/$file ; done
+basedir="/system/blobs/$variant/"
+cd $basedir
+chmod 755 bin/*
+find . -type f | while read file; do ln -s $basedir$file /system/$file ; done

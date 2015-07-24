@@ -58,6 +58,7 @@ vendor/lib/libchromatix_s5k6a1gx_default_video.so
 vendor/lib/libchromatix_s5k6a1gx_hdr.so
 vendor/lib/libchromatix_s5k6a1gx_preview.so
 vendor/lib/libfastcvopt.so
+lib/libhtccamera.so
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_cpp_module.so
 vendor/lib/libmmcamera2_iface_modules.so
@@ -187,52 +188,52 @@ vendor/lib/libthermalclient.so
 
 # QMI
 bin/rmt_storage
-# blobs/gsm/bin/qmuxd
-# blobs/gsm/vendor/lib/libdiag.so
-# blobs/gsm/vendor/lib/libdsi_netctrl.so
-# blobs/gsm/vendor/lib/libdsnetutils.so
-# blobs/gsm/vendor/lib/libdsutils.so
-# blobs/gsm/vendor/lib/libidl.so
-# blobs/gsm/vendor/lib/libqcci_legacy.so
-# blobs/gsm/vendor/lib/libqdi.so
-# blobs/gsm/vendor/lib/libqdp.so
-# blobs/gsm/vendor/lib/libqmi_cci.so
-# blobs/gsm/vendor/lib/libqmi_client_qmux.so
-# blobs/gsm/vendor/lib/libqmi_common_so.so
-# blobs/gsm/vendor/lib/libqmi_csi.so
-# blobs/gsm/vendor/lib/libqmi_encdec.so
-# blobs/gsm/vendor/lib/libqmiservices.so
-# blobs/gsm/vendor/lib/libqmi.so
-# blobs/chl/bin/qmuxd
-# blobs/chl/vendor/lib/libdiag.so
-# blobs/chl/vendor/lib/libdsi_netctrl.so
-# blobs/chl/vendor/lib/libdsnetutils.so
-# blobs/chl/vendor/lib/libdsutils.so
-# blobs/chl/vendor/lib/libidl.so
-# blobs/chl/vendor/lib/libqcci_legacy.so
-# blobs/chl/vendor/lib/libqdi.so
-# blobs/chl/vendor/lib/libqdp.so
-# blobs/chl/vendor/lib/libqmi_cci.so
-# blobs/chl/vendor/lib/libqmi_client_qmux.so
-# blobs/chl/vendor/lib/libqmi_common_so.so
-# blobs/chl/vendor/lib/libqmi_csi.so
-# blobs/chl/vendor/lib/libqmi_csvt_srvc.so
-# blobs/chl/vendor/lib/libqmi_encdec.so
-# blobs/chl/vendor/lib/libqmiservices.so
-# blobs/chl/vendor/lib/libqmi.so
+blobs/gsm/bin/qmuxd
+blobs/gsm/vendor/lib/libdiag.so
+blobs/gsm/vendor/lib/libdsi_netctrl.so
+blobs/gsm/vendor/lib/libdsnetutils.so
+blobs/gsm/vendor/lib/libdsutils.so
+blobs/gsm/vendor/lib/libidl.so
+blobs/gsm/vendor/lib/libqcci_legacy.so
+blobs/gsm/vendor/lib/libqdi.so
+blobs/gsm/vendor/lib/libqdp.so
+blobs/gsm/vendor/lib/libqmi_cci.so
+blobs/gsm/vendor/lib/libqmi_client_qmux.so
+blobs/gsm/vendor/lib/libqmi_common_so.so
+blobs/gsm/vendor/lib/libqmi_csi.so
+blobs/gsm/vendor/lib/libqmi_encdec.so
+blobs/gsm/vendor/lib/libqmiservices.so
+blobs/gsm/vendor/lib/libqmi.so
+blobs/chl/bin/qmuxd
+blobs/chl/vendor/lib/libdiag.so
+blobs/chl/vendor/lib/libdsi_netctrl.so
+blobs/chl/vendor/lib/libdsnetutils.so
+blobs/chl/vendor/lib/libdsutils.so
+blobs/chl/vendor/lib/libidl.so
+blobs/chl/vendor/lib/libqcci_legacy.so
+blobs/chl/vendor/lib/libqdi.so
+blobs/chl/vendor/lib/libqdp.so
+blobs/chl/vendor/lib/libqmi_cci.so
+blobs/chl/vendor/lib/libqmi_client_qmux.so
+blobs/chl/vendor/lib/libqmi_common_so.so
+blobs/chl/vendor/lib/libqmi_csi.so
+blobs/chl/vendor/lib/libqmi_csvt_srvc.so
+blobs/chl/vendor/lib/libqmi_encdec.so
+blobs/chl/vendor/lib/libqmiservices.so
+blobs/chl/vendor/lib/libqmi.so
 
 # Radio
-# blobs/gsm/bin/netmgrd
-# blobs/gsm/bin/rild
-# blobs/gsm/lib/libril.so
-# blobs/gsm/lib/libhtc_rilhook.so
-# blobs/gsm/vendor/lib/libnetmgr.so
-# blobs/gsm/vendor/lib/libril-qc-qmi-1.so
-# blobs/gsm/vendor/lib/libril-qcril-hook-oem.so
-# blobs/chl/bin/netmgrd
-# blobs/chl/vendor/lib/libnetmgr.so
-# blobs/chl/vendor/lib/libril-qc-qmi-1.so
-# blobs/chl/vendor/lib/libril-qcril-hook-oem.so
+blobs/gsm/bin/netmgrd
+blobs/gsm/bin/rild
+blobs/gsm/lib/libril.so
+blobs/gsm/lib/libhtc_rilhook.so
+blobs/gsm/vendor/lib/libnetmgr.so
+blobs/gsm/vendor/lib/libril-qc-qmi-1.so
+blobs/gsm/vendor/lib/libril-qcril-hook-oem.so
+blobs/chl/bin/netmgrd
+blobs/chl/vendor/lib/libnetmgr.so
+blobs/chl/vendor/lib/libril-qc-qmi-1.so
+blobs/chl/vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/libqc-opt.so
 
 # Sensors
