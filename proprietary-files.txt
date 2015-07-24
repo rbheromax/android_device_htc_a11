@@ -21,8 +21,9 @@ vendor/lib/libacdbmapper.so
 vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
 vendor/lib/libaudcal.so
-vendor/lib/soundfx/libqcbassboost.so
-vendor/lib/soundfx/libqcvirt.so
+# vendor/lib/soundfx/libqcbassboost.so
+# vendor/lib/soundfx/libqcvirt.so
+# vendor/lib/soundfx/libqcreverb.so
 
 # Bluetooth
 bin/hci_qcomm_init
@@ -35,30 +36,24 @@ etc/firmware/cpp_firmware_v1_2_0.fw
 etc/firmware/ILP0100_IPM_Code_out.bin
 etc/firmware/ILP0100_IPM_Data_out.bin
 etc/firmware/lscbuffer_rev2.bin
-lib/hw/camera.msm8226.so
-lib/libawb_calibration.so
-lib/libBeautyChat.so
-lib/libcamera_aec.so
-lib/libcamera_af.so
-lib/libcamera_awb.so
-lib/libcamera_client.so
-lib/libcamera_metadata.so
-lib/libcameraface.so
-lib/libcamerapp.so
-vendor/lib/libchromatix_s5k5e2_twolane_common.so
-vendor/lib/libchromatix_s5k5e2_twolane_default_video.so
-vendor/lib/libchromatix_s5k5e2_twolane_hdr.so
-vendor/lib/libchromatix_s5k5e2_twolane_hfr.so
-vendor/lib/libchromatix_s5k5e2_twolane_hfr_60fps.so
-vendor/lib/libchromatix_s5k5e2_twolane_hfr_common.so
-vendor/lib/libchromatix_s5k5e2_twolane_preview.so
-vendor/lib/libchromatix_s5k5e2_twolane_video_16_9.so
-vendor/lib/libchromatix_s5k6a1gx_common.so
-vendor/lib/libchromatix_s5k6a1gx_default_video.so
-vendor/lib/libchromatix_s5k6a1gx_hdr.so
-vendor/lib/libchromatix_s5k6a1gx_preview.so
+lib/hw/camera.vendor.msm8226.so
+vendor/lib/libawb_calibration.so
+vendor/lib/libBeautyChat.so
+vendor/lib/libcamera_aec.so
+vendor/lib/libcamera_af.so
+vendor/lib/libcamera_awb.so
+vendor/lib/libcameraface.so
+vendor/lib/libcamerapp.so
+vendor/lib/libchromatix_gc_0339_common.so
+vendor/lib/libchromatix_gc_0339_default_video.so
+vendor/lib/libchromatix_gc_0339_preview.so
+vendor/lib/libchromatix_s5k5e_onelane_common.so
+vendor/lib/libchromatix_s5k5e_onelane_default_video.so
+vendor/lib/libchromatix_s5k5e_onelane_hdr.so
+vendor/lib/libchromatix_s5k5e_onelane_preview.so
+vendor/lib/libchromatix_s5k5e_onelane_video_16_9.so
 vendor/lib/libfastcvopt.so
-lib/libhtccamera.so
+vendor/lib/libhtccamera.so
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_cpp_module.so
 vendor/lib/libmmcamera2_iface_modules.so
@@ -74,12 +69,12 @@ vendor/lib/libmmcamera_faceproc.so
 vendor/lib/libmmcamera_hdr_gb_lib.so
 vendor/lib/libmmcamera_hdr_lib.so
 vendor/lib/libmmcamera_imglib.so
-lib/libmmcamera_interface.so
+vendor/lib/libmmcamera_interface.so
 vendor/lib/libmmcamera_ofilm_oty5f03_eeprom.so
+vendor/lib/libmmcamera_ov13850.so
 vendor/lib/libmmcamera_ov5648_oty5f03.so
 vendor/lib/libmmcamera_ov8865_q8v18a.so
-vendor/lib/libmmcamera_s5k5e2_twolane.so
-vendor/lib/libmmcamera_s5k6a1gx.so
+vendor/lib/libmmcamera_s5k5e_onelane.so
 vendor/lib/libmmcamera_SKUAA_ST_gc0339.so
 vendor/lib/libmmcamera_skuab_shinetech_gc0339.so
 vendor/lib/libmmcamera_SKUAB_ST_s5k4e1.so
@@ -96,23 +91,31 @@ vendor/lib/libmmcamera_tuning.so
 vendor/lib/libmmcamera_wavelet_lib.so
 vendor/lib/libmmipl.so
 vendor/lib/liboemcamera.so
-lib/libposteffect.so
-lib/libqomx_core.so
-lib/libtuning_aec.so
-lib/libtuning_aec_s5k5e2_twolane_hdr.so
-lib/libtuning_aec_s5k5e2_twolane_hdr_16_9.so
-lib/libtuning_aec_s5k5e2_twolane_video.so
-lib/libtuning_aec_s5k5e2_twolane_videoHFR.so
-lib/libtuning_aec_s5k5e2_twolane_video_16_9.so
-lib/libtuning_aec_s5k5e2_twolane_video_60fps.so
-lib/libtuning_aec_s5k5e2_twolane_zsl.so
-lib/libtuning_aec_s5k5e2_twolane_zsl_16_9.so
-lib/libtuning_aec_s5k6a1gx_hdr.so
-lib/libtuning_aec_s5k6a1gx_video.so
-lib/libtuning_aec_s5k6a1gx_zsl.so
-lib/libtuning_af.so
-lib/libtuning_awb_s5k5e2_twolane.so
-lib/libtuning_awb_s5k6a1gx.so
+vendor/lib/libposteffect.so
+vendor/lib/libqomx_core.so
+vendor/lib/libtuning_aec_ov13850_hdr_16_9.so
+vendor/lib/libtuning_aec_ov13850_hdr.so
+vendor/lib/libtuning_aec_ov13850_night_16_9.so
+vendor/lib/libtuning_aec_ov13850_night.so
+vendor/lib/libtuning_aec_ov13850_video_60fps.so
+vendor/lib/libtuning_aec_ov13850_videoHFR.so
+vendor/lib/libtuning_aec_ov13850_video.so
+vendor/lib/libtuning_aec_ov13850_zoe.so
+vendor/lib/libtuning_aec_ov13850_zsl_16_9.so
+vendor/lib/libtuning_aec_ov13850_zsl.so
+vendor/lib/libtuning_aec_s5k5e_onelane_hdr_16_9.so
+vendor/lib/libtuning_aec_s5k5e_onelane_hdr.so
+vendor/lib/libtuning_aec_s5k5e_onelane_video_16_9.so
+vendor/lib/libtuning_aec_s5k5e_onelane_video.so
+vendor/lib/libtuning_aec_s5k5e_onelane_zsl_16_9.so
+vendor/lib/libtuning_aec_s5k5e_onelane_zsl.so
+vendor/lib/libtuning_aec.so
+vendor/lib/libtuning_af_0.so
+vendor/lib/libtuning_af_1.so
+vendor/lib/libtuning_af_3.so
+vendor/lib/libtuning_af.so
+vendor/lib/libtuning_awb_ov13850.so
+vendor/lib/libtuning_awb_s5k5e_onelane.so
 
 # GPS
 etc/gps.conf
@@ -177,7 +180,7 @@ vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 
 # NFC
-# vendor/firmware/libpn547_fw.so
+vendor/firmware/libpn547_fw.so
 
 # Power
 bin/charging
@@ -237,12 +240,12 @@ blobs/chl/vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/libqc-opt.so
 
 # Sensors
-# bin/akmd
+bin/akmd
 lib/hw/sensors.msm8226.so
 
 # Time
 bin/time_daemon
-vendor/lib/libtime_genoff.so
+-lib/libtime_genoff.so
 
 # TrustZone
 etc/firmware/hcheck.b00
@@ -253,23 +256,23 @@ etc/firmware/hcheck.mdt
 
 # DRM
 bin/qseecomd
-etc/firmware/cmnlib.b00
-etc/firmware/cmnlib.b01
-etc/firmware/cmnlib.b02
-etc/firmware/cmnlib.b03
-etc/firmware/cmnlib.mdt
-vendor/firmware/keymaster.b00
-vendor/firmware/keymaster.b01
-vendor/firmware/keymaster.b02
-vendor/firmware/keymaster.b03
-vendor/firmware/keymaster.mdt
-vendor/lib/drm/libdrmwvmplugin.so
-# vendor/lib/drm/libfwdlockengine.so
+vendor/firmware/cmnlib.b00
+vendor/firmware/cmnlib.b01
+vendor/firmware/cmnlib.b02
+vendor/firmware/cmnlib.b03
+vendor/firmware/cmnlib.mdt
+vendor/firmware/keymaster/keymaster.b00
+vendor/firmware/keymaster/keymaster.b01
+vendor/firmware/keymaster/keymaster.b02
+vendor/firmware/keymaster/keymaster.b03
+vendor/firmware/keymaster/keymaster.mdt
+# vendor/lib/drm/libdrmwvmplugin.so
+lib/drm/libfwdlockengine.so
 vendor/lib/libQSEEComAPI.so
 vendor/lib/libWVStreamControlAPI_L3.so
 # vendor/lib/libWVphoneAPI.so
 # vendor/lib/libdrmdecrypt.so
-vendor/lib/libwvdrm_L3.so
+# vendor/lib/libwvdrm_L1.so
 vendor/lib/libwvm.so
 # vendor/lib/mediadrm/libdrmclearkeyplugin.so
-vendor/lib/mediadrm/libwvdrmengine.so
+# vendor/lib/mediadrm/libwvdrmengine.so
