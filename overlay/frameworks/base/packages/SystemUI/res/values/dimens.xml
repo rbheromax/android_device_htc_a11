@@ -16,8 +16,8 @@
 */
 -->
 <resources>
-    <dimen name="self_expand_velocity">4000dp</dimen>
-    <dimen name="self_collapse_velocity">4000dp</dimen>
-    <dimen name="fling_gesture_max_x_velocity">1500dp</dimen>
-    <dimen name="fling_gesture_max_output_velocity">6000dp</dimen>
+    <dimen name="self_expand_velocity">2000dp</dimen>
+    <dimen name="self_collapse_velocity">2000dp</dimen>
+    <dimen name="fling_gesture_max_x_velocity">200dp</dimen>
+    <dimen name="fling_gesture_max_output_velocity">3000dp</dimen>
 </resources>

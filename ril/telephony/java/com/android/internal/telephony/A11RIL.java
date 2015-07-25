@@ -538,7 +538,7 @@ public class A11RIL extends RIL implements CommandsInterface {
         }
     }
 
-    protected Object responseHardwareConfig(Parcel p) {
+   /* private Object responseHardwareConfig(Parcel p) {
       int num;
       ArrayList<HardwareConfig> response;
       HardwareConfig hw;
@@ -573,9 +573,9 @@ public class A11RIL extends RIL implements CommandsInterface {
       }
 
       return response;
-   } 
+   } */
 
-    protected ArrayList<ApnSetting> responseGetDataCallProfile(Parcel p) {
+   /* private ArrayList<ApnSetting> responseGetDataCallProfile(Parcel p) {
         int nProfiles = p.readInt();
         if (RILJ_LOGD) riljLog("# data call profiles:" + nProfiles);
 
@@ -595,9 +595,9 @@ public class A11RIL extends RIL implements CommandsInterface {
         }
 
         return response;
-    } 
+    } */
 
-    protected Object responseICC_IOBase64(Parcel p) {
+   /* private Object responseICC_IOBase64(Parcel p) {
         int sw1, sw2;
         Message ret;
 
@@ -613,6 +613,6 @@ public class A11RIL extends RIL implements CommandsInterface {
 
 
         return new IccIoResult(sw1, sw2, android.util.Base64.decode(s, android.util.Base64.DEFAULT));
-    } 
+    } */
 
 }

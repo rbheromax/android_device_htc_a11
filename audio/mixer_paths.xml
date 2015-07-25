@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- Version: A5 20140304_add_voice_call_with_enforce_shutter_sound -->
+<!-- Version: A11 20140304_add_voice_call_with_enforce_shutter_sound -->
 <mixer>
 <!-- These are the initial mixer settings -->
      <ctl name="Voice Rx Device Mute" id="0" value="0" />
