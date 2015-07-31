@@ -69,8 +69,8 @@ BLUETOOTH_HCI_USE_MCT := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/a11/bluetooth
 
 # Camera
-COMMON_GLOBAL_CFLAGS += -DPROPERTY_PERMS_APPEND='{"htc.camera.sensor.", AID_CAMERA, 0}, {"camera.4k2k.", AID_MEDIA, 0}, {"persist.camera.", AID_MEDIA, 0},'
-USE_DEVICE_SPECIFIC_CAMERA := true
+# COMMON_GLOBAL_CFLAGS += -DPROPERTY_PERMS_APPEND='{"htc.camera.sensor.", AID_CAMERA, 0}, {"camera.4k2k.", AID_MEDIA, 0}, {"persist.camera.", AID_MEDIA, 0},'
+# USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Charge mode
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
@@ -155,7 +155,6 @@ BOARD_SEPOLICY_UNION += \
     init.te \
     kernel.te \
     mediaserver.te \
-    mm-qcamerad.te \
     mpdecision.te \
     platform_app.te \
     property_contexts \
