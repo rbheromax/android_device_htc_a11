@@ -108,6 +108,7 @@ TARGET_NO_RPC := true
 BOARD_USES_QC_TIME_SERVICES := true
 
 # Wifi
+# Use wifi configs from mako, which has the same chip
 BOARD_HAS_QCOM_WLAN := true
 BOARD_WLAN_DEVICE := qcwcn
 WPA_SUPPLICANT_VERSION := VER_0_8_X
@@ -115,9 +116,8 @@ BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
-TARGET_USES_WCNSS_CTRL := true
 WIFI_DRIVER_FW_PATH_STA := "sta"
-WIFI_DRIVER_FW_PATH_AP := "ap"
+WIFI_DRIVER_FW_PATH_AP  := "ap"
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
@@ -149,6 +149,7 @@ BOARD_SEPOLICY_DIRS += device/htc/a11/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     akmd.te \
+    conn_init.te \
     device.te \
     file_contexts \
     file.te \

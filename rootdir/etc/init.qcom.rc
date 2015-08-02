@@ -512,6 +512,13 @@ service time_daemon /system/bin/time_daemon
     oneshot
     disabled
 
+service wcnss_init /system/bin/sh /system/etc/init.a11.wifi.sh
+    class late_start
+    user system
+    group system wifi
+    seclabel u:r:conn_init:s0
+    oneshot
+
 service wcnss-service /system/bin/wcnss_service
     class main
     user system
