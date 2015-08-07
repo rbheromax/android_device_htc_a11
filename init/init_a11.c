@@ -38,8 +38,8 @@ void dualsim_properties(char multisim_config[])
 {
     property_set("persist.radio.multisim.config", multisim_config);
     property_set("persist.radio.dont_use_dsd", "true");
-    property_set("ro.telephony.ril_class", "A11RIL");
-    property_set("ro.telephony.ril.v3", "signalstrength");
+    property_set("ro.telephony.ril_class", "A11chlRIL");
+//  property_set("ro.telephony.ril.v3", "signalstrength");
 }
 
 void gsm_properties(char default_network[])
@@ -52,6 +52,7 @@ void gsm_properties(char default_network[])
     property_set("ro.ril.enable.sdr", "1");
     property_set("ro.ril.enable.r8fd", "1");
     property_set("ro.ril.disable.fd.plmn.prefix", "23402,23410,23411,23420,23594,27202,27205");
+    property_set("ro.telephony.ril_class", "A11ulRIL");
 }
 
 void cdma_properties(char default_cdma_sub[], char default_network[],
@@ -64,7 +65,7 @@ void cdma_properties(char default_cdma_sub[], char default_network[],
     property_set("gsm.operator.numeric", operator_numeric);
     property_set("ro.cdma.home.operator.alpha", operator_alpha);
     property_set("gsm.sim.operator.alpha", operator_alpha);
-    property_set("gsm.operator.alpha", operator_numeric);
+    property_set("gsm.operator.alpha", operator_alpha);
 
     property_set("telephony.lteOnCdmaDevice", "1");
     property_set("ro.cdma.subscribe_on_ruim_ready", "true");
@@ -75,6 +76,7 @@ void cdma_properties(char default_cdma_sub[], char default_network[],
     property_set("ro.ril.enable.a53", "1");
     property_set("persist.radio.snapshot_enabled", "1");
     property_set("persist.radio.snapshot_timer", "22");
+    property_set("ro.telephony.ril_class", "A11chlRIL");
 }
 
 void vendor_load_properties()
@@ -93,18 +95,18 @@ void vendor_load_properties()
     property_get("ro.boot.carrier", carrier);
 
     if (strstr(bootmid, "OPCV1000")) {
-        /* a11chl */
+        /* a11chl - Sprint/Virgin Mobile */
         cdma_properties("1", "8", "310120", "Sprint");
         property_set("ro.build.fingerprint", "htc/sprint_wwe_vm/htc_a11chl:4.4.2/KOT49H/338737.1:user/release-keys");
         property_set("ro.build.description", "1.13.652.1 CL338737 release-keys");
         property_set("ro.product.model", "HTC Desire 510");
         property_set("ro.product.device", "a11chl");
         property_set("ro.build.product", "a11chl");
-        property_set("telephony.sms.pseudo_multipart", "1");
+//      property_set("telephony.sms.pseudo_multipart", "1");
         property_set("ro.ril.oem.ecclist", "911");
         property_set("ro.ril.set.mtusize", "1422");
     } else if (strstr(bootmid, "OPCV2000")) {
-        /* a11chl */
+        /* a11chl - Boost Mobile */
         cdma_properties("1", "8", "310120", "Boost Mobile");
         property_set("ro.build.fingerprint", "htc/Boost_wwe/htc_a11chl:4.4.2/KOT49H/338737.1:user/release-keys");
         property_set("ro.build.description", "1.13.652.1 CL338737 release-keys");
