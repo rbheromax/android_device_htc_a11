@@ -48,7 +48,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02008000 --tags_offset 0x01e00000
 BOARD_CUSTOM_BOOTIMG_MK := device/htc/a11/mkbootimg.mk
-TARGET_KERNEL_CONFIG := cyanogenmod_a11ul_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_a11_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/a11
 
 # QCOM hardware
