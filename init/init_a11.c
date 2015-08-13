@@ -94,7 +94,7 @@ void vendor_load_properties()
     property_get("ro.boot.mid", bootmid);
     property_get("ro.boot.carrier", carrier);
 
-    if (strstr(bootmid, "OPCV1000")) {
+    if (strstr(bootmid, "0PCV10000")) {
         /* a11chl - Sprint/Virgin Mobile */
         cdma_properties("1", "8", "310120", "Sprint");
         property_set("ro.build.fingerprint", "htc/sprint_wwe_vm/htc_a11chl:4.4.2/KOT49H/338737.1:user/release-keys");
@@ -105,7 +105,7 @@ void vendor_load_properties()
 //      property_set("telephony.sms.pseudo_multipart", "1");
         property_set("ro.ril.oem.ecclist", "911");
         property_set("ro.ril.set.mtusize", "1422");
-    } else if (strstr(bootmid, "OPCV2000")) {
+    } else if (strstr(bootmid, "0PCV20000")) {
         /* a11chl - Boost Mobile */
         cdma_properties("1", "8", "310120", "Boost Mobile");
         property_set("ro.build.fingerprint", "htc/Boost_wwe/htc_a11chl:4.4.2/KOT49H/338737.1:user/release-keys");
