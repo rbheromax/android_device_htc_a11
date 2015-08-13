@@ -5,7 +5,7 @@ set -e
 modelid=`getprop ro.boot.mid`
 
 case $modelid in
-	OPCV10000|OPCV20000)		variant="chl" ;;
+	0PCV10000|0PCV20000)		variant="chl" ;;
 	*)				variant="gsm" ;;
 esac
 
