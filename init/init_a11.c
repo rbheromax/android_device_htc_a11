@@ -52,7 +52,7 @@ void gsm_properties(char default_network[])
     property_set("ro.ril.enable.sdr", "1");
     property_set("ro.ril.enable.r8fd", "1");
     property_set("ro.ril.disable.fd.plmn.prefix", "23402,23410,23411,23420,23594,27202,27205");
-    property_set("ro.telephony.ril_class", "A11ulRIL");
+//    property_set("ro.telephony.ril_class", "A11ulRIL");
 }
 
 void cdma_properties(char default_cdma_sub[], char default_network[],
@@ -76,7 +76,7 @@ void cdma_properties(char default_cdma_sub[], char default_network[],
     property_set("ro.ril.enable.a53", "1");
     property_set("persist.radio.snapshot_enabled", "1");
     property_set("persist.radio.snapshot_timer", "22");
-    property_set("ro.telephony.ril_class", "A11chlRIL");
+//    property_set("ro.telephony.ril_class", "A11chlRIL");
 }
 
 void vendor_load_properties()
@@ -113,7 +113,7 @@ void vendor_load_properties()
         property_set("ro.product.model", "HTC Desire 510");
         property_set("ro.product.device", "a11chl");
         property_set("ro.build.product", "a11chl");
-        property_set("telephony.sms.pseudo_multipart", "1");
+//      property_set("telephony.sms.pseudo_multipart", "1");
         property_set("ro.ril.oem.ecclist", "911");
         property_set("ro.ril.set.mtusize", "1422");
     } else {

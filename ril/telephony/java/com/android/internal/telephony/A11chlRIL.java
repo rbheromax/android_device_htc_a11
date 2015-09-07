@@ -22,11 +22,8 @@ import com.android.internal.telephony.RIL;
 import com.android.internal.telephony.uicc.IccCardApplicationStatus;
 import com.android.internal.telephony.uicc.IccCardStatus;
 
-/**
- * RIL customization for Desire 510 (Sprint/Virgin variant)
- *
- * {@hide}
- */
+// RIL customization for Desire 510 (Sprint/Virgin/Boost variant)
+
 public class A11chlRIL extends RIL {
 
     public A11chlRIL(Context context, int networkMode, int cdmaSubscription) {
