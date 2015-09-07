@@ -5,8 +5,8 @@ set -e
 modelid=`getprop ro.boot.mid`
 
 case $modelid in
-	0PCV10000)			variant="chl" ;;
-	0PCV20000|*)			variant="gsm" ;;
+	0PCV10000|0PCV20000)		variant="chl" ;;
+	*)				variant="gsm" ;;
 esac
 
 if [ $variant == "gsm" ]; then		
