@@ -39,7 +39,6 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
 TARGET_CPU_VARIANT := cortex-a7
-TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 zcache androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
@@ -53,6 +52,11 @@ TARGET_KERNEL_SOURCE := kernel/htc/a11
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+TARGET_QCOM_AUDIO_VARIANT := caf
+TARGET_QCOM_DISPLAY_VARIANT := caf-new
+TARGET_QCOM_MEDIA_VARIANT := caf-new
+TARGET_USES_QCOM_BSP := true
 
 # Audio
 AUDIO_FEATURE_DISABLED_MULTI_VOICE_SESSIONS := true
@@ -92,7 +96,7 @@ TARGET_SPECIFIC_HEADER_PATH := device/htc/a11/include
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Logging
-COMMON_GLOBAL_CFLAGS += -DHTCLOG -DMOTOROLA_LOG
+COMMON_GLOBAL_CFLAGS += -DHTCLOG
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
@@ -138,7 +142,6 @@ BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
 TARGET_RECOVERY_FSTAB := device/htc/a11/rootdir/etc/fstab.qcom
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
-TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_RECOVERY_SWIPE := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
@@ -193,9 +196,6 @@ TW_EXTERNAL_STORAGE_PATH := "/external_sd"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 TW_EXTERNAL_STORAGE_PATH := "/usb-otg"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "usb-otg"
-
-TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
 
 # inherit from the proprietary version
 -include vendor/htc/a11/BoardConfigVendor.mk

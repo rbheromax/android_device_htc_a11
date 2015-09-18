@@ -144,22 +144,22 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
 # NFC
-ifeq ($(TARGET_BUILD_VARIANT),user)
-    NFCEE_ACCESS_PATH := $(LOCAL_PATH)/configs/nfcee_access.xml
-else
-    NFCEE_ACCESS_PATH := $(LOCAL_PATH)/configs/nfcee_access_debug.xml
-endif
+#ifeq ($(TARGET_BUILD_VARIANT),user)
+#    NFCEE_ACCESS_PATH := $(LOCAL_PATH)/configs/nfcee_access.xml
+#else
+#    NFCEE_ACCESS_PATH := $(LOCAL_PATH)/configs/nfcee_access_debug.xml
+#endif
 
-PRODUCT_COPY_FILES += \
-    $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml \
-    $(LOCAL_PATH)/configs/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
-    $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/etc/libnfc-brcm.conf
+#PRODUCT_COPY_FILES += \
+#    $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml \
+#    $(LOCAL_PATH)/configs/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
+#    $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/etc/libnfc-brcm.conf
 
-PRODUCT_PACKAGES += \
-    NfcNci \
-    Tag \
-    com.android.nfc_extras \
-    nfc_nci.pn54x.default
+#PRODUCT_PACKAGES += \
+#    NfcNci \
+#    Tag \
+#    com.android.nfc_extras \
+#    nfc_nci.pn54x.default
 
 # OMX
 PRODUCT_PACKAGES += \
@@ -196,28 +196,27 @@ PRODUCT_PACKAGES += \
 
 # Variant linking script
 PRODUCT_COPY_FILES += \
-    device/htc/a11/releasetools/makelinks.sh:install/bin/makelinks.sh
+    device/htc/a11/releasetools/variant_script.sh:install/bin/variant_script.sh
 
 # Wifi firmware
 PRODUCT_PACKAGES += \
-    wcnss_service \
-    libwfcu
+    wcnss_service
 
 # WiFi config
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+    kernel/htc/a11/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    kernel/htc/a11/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
+    kernel/htc/a11/drivers/staging/prima/firmware_bin/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
+# WPA Supplicant
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-    $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
+    $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:/system/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:/system/etc/wifi/wpa_supplicant_overlay.conf
 
-PRODUCT_PACKAGES += \
-    hostapd \
-    hostapd_default.conf \
-    dhcpcd.conf \
-    libwpa_client \
-    wpa_supplicant \
-    wpa_supplicant.conf
+#PRODUCT_PACKAGES += \
+#    hostapd \
+#    hostapd_default.conf \
+#    dhcpcd.conf \
+#    libwpa_client \
+#    wpa_supplicant \
+#    wpa_supplicant.conf
