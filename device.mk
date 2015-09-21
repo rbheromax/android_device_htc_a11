@@ -213,10 +213,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:/system/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:/system/etc/wifi/wpa_supplicant_overlay.conf
 
-#PRODUCT_PACKAGES += \
-#    hostapd \
-#    hostapd_default.conf \
-#    dhcpcd.conf \
-#    libwpa_client \
-#    wpa_supplicant \
-#    wpa_supplicant.conf
+PRODUCT_PACKAGES += \
+    hostapd \
+    hostapd_default.conf \
+    dhcpcd.conf \
+    libwpa_client \
+    wpa_supplicant \
+    wpa_supplicant.conf
