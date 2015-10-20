@@ -34,47 +34,34 @@
 #include "log.h"
 #include "util.h"
 
-void dualsim_properties(char multisim_config[])
+void common_properties()
 {
-    property_set("persist.radio.multisim.config", multisim_config);
-    property_set("persist.radio.dont_use_dsd", "true");
-    property_set("ro.telephony.ril_class", "A11RIL");
-    property_set("ro.telephony.ril.v3", "signalstrength");
-}
-
-void gsm_properties(char default_network[])
-{
-    property_set("ro.telephony.default_network", default_network);
-    property_set("ro.ril.hsupa.category", "6");
+    property_set("rild.libargs", "-d /dev/smd0");
+    property_set("ro.ril.hsdpa.category", "14");
     property_set("ro.ril.hsxpa", "4");
     property_set("ro.ril.disable.cpc", "1");
-    property_set("ro.ril.enable.pre_r8fd", "1");
-    property_set("ro.ril.enable.sdr", "1");
-    property_set("ro.ril.enable.r8fd", "1");
-    property_set("ro.ril.disable.fd.plmn.prefix", "23402,23410,23411,23420,23594,27202,27205");
 }
 
-void cdma_properties(char default_cdma_sub[], char default_network[],
-                     char operator_numeric[], char operator_alpha[])
+void cdma_properties(char default_cdma_sub[], char default_network[])
 {
     property_set("ro.telephony.default_cdma_sub", default_cdma_sub);
     property_set("ro.telephony.default_network", default_network);
-    property_set("ro.cdma.home.operator.numeric", operator_numeric);
-    property_set("gsm.sim.operator.numeric", operator_numeric);
-    property_set("gsm.operator.numeric", operator_numeric);
-    property_set("ro.cdma.home.operator.alpha", operator_alpha);
-    property_set("gsm.sim.operator.alpha", operator_alpha);
-    property_set("gsm.operator.alpha", operator_alpha);
 
     property_set("telephony.lteOnCdmaDevice", "1");
-    property_set("ro.cdma.subscribe_on_ruim_ready", "true");
     property_set("ro.ril.svdo", "true");
     property_set("ro.ril.disable.fd.plmn.prefix", "23402,23410,23411,23420");
     property_set("ro.ril.enable.sdr", "0");
     property_set("ro.ril.enable.gea3", "1");
     property_set("ro.ril.enable.a53", "1");
+    property_set("ro.ril.enable.r8fd=1", "1");
     property_set("persist.radio.snapshot_enabled", "1");
     property_set("persist.radio.snapshot_timer", "22");
+}
+
+void gsm_properties(char default_network[])
+{
+    property_set("ro.telephony.default_network", default_network);
+    property_set("telephony.lteOnGsmDevice", "1");
 }
 
 void vendor_load_properties()
@@ -94,26 +81,41 @@ void vendor_load_properties()
 
     if (strstr(bootmid, "0PCV1000")) {
         /* a11chl - Sprint/Virgin */
-        cdma_properties("1", "8", "310120", carrier);
+        cdma_properties("1", "8");
         property_set("ro.build.fingerprint", "htc/sprint_wwe_vm/htc_a11chl:4.4.2/KOT49H/338737.1:user/release-keys");
         property_set("ro.build.description", "1.13.652.1 CL338737 release-keys");
         property_set("ro.product.model", "HTC Desire 510");
         property_set("ro.product.device", "a11chl");
         property_set("ro.build.product", "a11chl");
         property_set("telephony.sms.pseudo_multipart", "1");
+        property_set("ro.ril.enable.pre_r8fd=1", "1");
         property_set("ro.ril.oem.ecclist", "911");
         property_set("ro.ril.set.mtusize", "1422");
+        property_set("ro.cdma.home.operator.numeric", "310120");
+        property_set("gsm.sim.operator.numeric", "310120");
+        property_set("gsm.operator.numeric", "310120");
+        property_set("ro.cdma.home.operator.alpha", carrier);
+        property_set("gsm.sim.operator.alpha", carrier);
+        property_set("gsm.operator.alpha", "310120");
+        property_set("ro.telephony.ril_class", "a11SprRIL");
     } else if (strstr(bootmid, "0PCV2000")) {
         /* a11chl - Boost */
-        cdma_properties("1", "8", "310120", "Boost Mobile");
+        cdma_properties("1", "8");
         property_set("ro.build.fingerprint", "htc/Boost_wwe/htc_a11chl:4.4.2/KOT49H/338737.1:user/release-keys");
         property_set("ro.build.description", "1.13.652.1 CL338737 release-keys");
         property_set("ro.product.model", "HTC Desire 510");
         property_set("ro.product.device", "a11chl");
         property_set("ro.build.product", "a11chl");
         property_set("telephony.sms.pseudo_multipart", "1");
+        property_set("ro.ril.enable.pre_r8fd=1", "1");
         property_set("ro.ril.oem.ecclist", "911");
         property_set("ro.ril.set.mtusize", "1422");
+        property_set("ro.cdma.home.operator.numeric", "310120");
+        property_set("gsm.sim.operator.numeric", "310120");
+        property_set("gsm.operator.numeric", "310120");
+        property_set("ro.cdma.home.operator.alpha", carrier);
+        property_set("gsm.sim.operator.alpha", carrier);
+        property_set("gsm.operator.alpha", "310120");
     } else {
         /* a11ul - Cricket/AIO */
         gsm_properties("9");
@@ -122,12 +124,12 @@ void vendor_load_properties()
         property_set("ro.product.model", "HTC Desire 510");
         property_set("ro.product.device", "a11ul");
         property_set("ro.build.product", "a11ul");
-        property_set("ro.ril.hsdpa.category", "14");
+        /*property_set("ro.ril.hsdpa.category", "14");
         property_set("ro.ril.air.enabled", "1");
         property_set("ro.ril.enable.a53", "1");
         property_set("persist.radio.jbims", "1");
         property_set("ro.ril.enable.gea3", "1");
-        property_set("ro.ril.gsm.to.lte.blind.redir", "1");
+        property_set("ro.ril.gsm.to.lte.blind.redir", "1");*/
     }
 
     property_get("ro.product.device", device);

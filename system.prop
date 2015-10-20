@@ -65,8 +65,5 @@ ro.input.noresample=1
 # Time services
 persist.timed.enable=true
 
-# USB
-persist.sys.usb.config=mtp
-
 # Wifi
 wifi.interface=wlan0

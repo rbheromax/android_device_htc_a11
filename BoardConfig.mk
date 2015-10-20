@@ -102,7 +102,7 @@ COMMON_GLOBAL_CFLAGS += -DHTCLOG
 TARGET_POWERHAL_VARIANT := qcom
 
 # RIL
-BOARD_PROVIDES_LIBRIL := true
+BOARD_PROVIDES_LIBRIL := false
 BOARD_RIL_CLASS := ../../../device/htc/a11/ril/
 
 # RPC
@@ -149,25 +149,6 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 include device/qcom/sepolicy/sepolicy.mk
 include vendor/cm/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/htc/a11/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    akmd.te \
-    device.te \
-    file_contexts \
-    file.te \
-    init.te \
-    kernel.te \
-    mediaserver.te \
-    mpdecision.te \
-    platform_app.te \
-    property_contexts \
-    recovery.te \
-    rmt_storage.te \
-    system_server.te \
-    thermal-engine.te \
-    ueventd.te \
-    vibe_dev.te \
-    vold.te
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
