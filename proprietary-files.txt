@@ -21,9 +21,6 @@ vendor/lib/libacdbmapper.so
 vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
 vendor/lib/libaudcal.so
-# vendor/lib/soundfx/libqcbassboost.so
-# vendor/lib/soundfx/libqcvirt.so
-# vendor/lib/soundfx/libqcreverb.so
 
 # Bluetooth
 bin/hci_qcomm_init
@@ -44,68 +41,9 @@ vendor/lib/libcamera_af.so
 vendor/lib/libcamera_awb.so
 vendor/lib/libcameraface.so
 vendor/lib/libcamerapp.so
-# vendor/lib/libchromatix_ov13850_common.so
-# vendor/lib/libchromatix_ov13850_default_video.so
-# vendor/lib/libchromatix_ov13850_hdr.so
-# vendor/lib/libchromatix_ov13850_hfr_60fps.so
-# vendor/lib/libchromatix_ov13850_hfr.so
-# vendor/lib/libchromatix_ov13850_preview.so
-# vendor/lib/libchromatix_ov13850_qtr.so
-# vendor/lib/libchromatix_ov13850_zoe.so
-# vendor/lib/libchromatix_ov5648_oty5f03_common.so
-# vendor/lib/libchromatix_ov5648_oty5f03_default_video.so
-# vendor/lib/libchromatix_ov5648_oty5f03_preview.so
 vendor/lib/libchromatix_gc_0339_common.so
 vendor/lib/libchromatix_gc_0339_default_video.so
 vendor/lib/libchromatix_gc_0339_preview.so
-# vendor/lib/libchromatix_ov5648_oty5f03_snapshot.so
-# vendor/lib/libchromatix_ov8865_q8v18a_common.so
-# vendor/lib/libchromatix_ov8865_q8v18a_default_video.so
-# vendor/lib/libchromatix_ov8865_q8v18a_hfr_120fps.so
-# vendor/lib/libchromatix_ov8865_q8v18a_hfr_60fps.so
-# vendor/lib/libchromatix_ov8865_q8v18a_hfr_90fps.so
-# vendor/lib/libchromatix_ov8865_q8v18a_liveshot.so
-# vendor/lib/libchromatix_ov8865_q8v18a_preview.so
-# vendor/lib/libchromatix_ov8865_q8v18a_snapshot.so
-# vendor/lib/libchromatix_ov8865_q8v18a_video_hd.so
-# vendor/lib/libchromatix_ov8865_q8v18a_zsl.so
-# vendor/lib/libchromatix_s5k5e_onelane_common.so
-# vendor/lib/libchromatix_s5k5e_onelane_default_video.so
-# vendor/lib/libchromatix_s5k5e_onelane_hdr.so
-# vendor/lib/libchromatix_s5k5e_onelane_preview.so
-# vendor/lib/libchromatix_s5k5e_onelane_video_16_9.so
-# vendor/lib/libchromatix_SKUAA_ST_gc0339_common.so
-# vendor/lib/libchromatix_SKUAA_ST_gc0339_default_video.so
-# vendor/lib/libchromatix_SKUAA_ST_gc0339_preview.so
-# vendor/lib/libchromatix_skuab_shinetech_gc0339_common.so
-# vendor/lib/libchromatix_skuab_shinetech_gc0339_default_video.so
-# vendor/lib/libchromatix_skuab_shinetech_gc0339_liveshot.so
-# vendor/lib/libchromatix_skuab_shinetech_gc0339_preview.so
-# vendor/lib/libchromatix_skuab_shinetech_gc0339_snapshot.so
-# vendor/lib/libchromatix_skuab_shinetech_gc0339_zsl.so
-# vendor/lib/libchromatix_SKUAB_ST_s5k4e1_common.so
-# vendor/lib/libchromatix_SKUAB_ST_s5k4e1_default_video.so
-# vendor/lib/libchromatix_SKUAB_ST_s5k4e1_hfr_120fps.so
-# vendor/lib/libchromatix_SKUAB_ST_s5k4e1_hfr_60fps.so
-# vendor/lib/libchromatix_SKUAB_ST_s5k4e1_hfr_90fps.so
-# vendor/lib/libchromatix_SKUAB_ST_s5k4e1_liveshot.so
-# vendor/lib/libchromatix_SKUAB_ST_s5k4e1_preview.so
-# vendor/lib/libchromatix_SKUAB_ST_s5k4e1_snapshot.so
-# vendor/lib/libchromatix_SKUAB_ST_s5k4e1_video_hd.so
-# vendor/lib/libchromatix_SKUAB_ST_s5k4e1_zsl.so
-# vendor/lib/libchromatix_skuf_ov12830_p12v01c_common.so
-# vendor/lib/libchromatix_skuf_ov12830_p12v01c_default_video.so
-# vendor/lib/libchromatix_skuf_ov12830_p12v01c_hfr_120fps.so
-# vendor/lib/libchromatix_skuf_ov12830_p12v01c_hfr_60fps.so
-# vendor/lib/libchromatix_skuf_ov12830_p12v01c_hfr_90fps.so
-# vendor/lib/libchromatix_skuf_ov12830_p12v01c_preview.so
-# vendor/lib/libchromatix_skuf_ov12830_p12v01c_snapshot.so
-# vendor/lib/libchromatix_skuf_ov12830_p12v01c_video_hd.so
-# vendor/lib/libchromatix_skuf_ov12830_p12v01c_zsl.so
-# vendor/lib/libchromatix_skuf_ov5648_p5v23c_common.so
-# vendor/lib/libchromatix_skuf_ov5648_p5v23c_default_video.so
-# vendor/lib/libchromatix_skuf_ov5648_p5v23c_preview.so
-# vendor/lib/libchromatix_skuf_ov5648_p5v23c_snapshot.so
 vendor/lib/libfastcvopt.so
 vendor/lib/libhtccamera.so
 vendor/lib/libmmcamera2_c2d_module.so
@@ -241,7 +179,6 @@ bin/charging
 bin/mpdecision
 bin/thermal-engine
 vendor/lib/libthermalclient.so
-# vendor/lib/libthermalioctl.so
 
 # QMI
 bin/rmt_storage
@@ -320,13 +257,6 @@ vendor/firmware/keymaster/keymaster.b01
 vendor/firmware/keymaster/keymaster.b02
 vendor/firmware/keymaster/keymaster.b03
 vendor/firmware/keymaster/keymaster.mdt
-# vendor/lib/drm/libdrmwvmplugin.so
-# vendor/lib/drm/libfwdlockengine.so
 vendor/lib/libQSEEComAPI.so
 vendor/lib/libWVStreamControlAPI_L3.so
-# vendor/lib/libWVphoneAPI.so
-# vendor/lib/libdrmdecrypt.so
-# vendor/lib/libwvdrm_L1.so
 vendor/lib/libwvm.so
-# vendor/lib/mediadrm/libdrmclearkeyplugin.so
-# vendor/lib/mediadrm/libwvdrmengine.so
