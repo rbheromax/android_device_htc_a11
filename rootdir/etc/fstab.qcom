@@ -22,6 +22,6 @@
 /dev/block/platform/msm_sdcc.1/by-name/devlog       /devlog          ext4    nosuid,nodev,barrier=1,errors=continue                                      wait
 /dev/block/platform/msm_sdcc.1/by-name/fataldevlog  /fataldevlog     ext4    nosuid,nodev,barrier=1,errors=continue                                      wait
 
-/dev/block/platform/msm_sdcc.2/mmc*               auto         auto    defaults                                                                       voldmanaged=usb:auto
+/devices/msm_sdcc.2/mmc_host*                       auto            auto    nosuid,nodev                                                    voldmanaged=sdcard1:auto,encryptable=userdata
 # ZRAM
 /dev/block/zram0                                   none            swap defaults             zramsize=268435456
