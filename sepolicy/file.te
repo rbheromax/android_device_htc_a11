@@ -1,2 +1,8 @@
 type display_sysfs, sysfs_type, file_type;
 type vibe_dev, file_type;
+
+# Power
+type sysfs_power, sysfs_type;
+
+# Light
+type sysfs_light, sysfs_type;
