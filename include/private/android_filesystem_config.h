@@ -104,29 +104,6 @@
 #define AID_RFS           3012  /* Remote Filesystem for peripheral processors */
 #define AID_RFS_SHARED    3013  /* Shared files for Remote Filesystem for peripheral processors  */
 
-/* Motorola IDs */
-#define AID_MOT_ACCY      9000  /* access to accessory */
-#define AID_MOT_PWRIC     9001  /* power IC */
-#define AID_MOT_USB       9002  /* mot usb */
-#define AID_MOT_DRM       9003  /* can access DRM resource. */
-#define AID_MOT_TCMD      9004  /* mot_tcmd */
-#define AID_MOT_SEC_RTC   9005  /* mot cpcap rtc */
-#define AID_MOT_TOMBSTONE 9006
-#define AID_MOT_TPAPI     9007  /* mot_tpapi */
-#define AID_MOT_SECCLKD   9008  /* mot_secclkd */
-#define AID_MOT_WHISPER   9009  /* Whisper Protocol access */
-#define AID_MOT_CAIF      9010  /* can create CAIF sockets */
-#define AID_MOT_DLNA      9011  /*DLNA native */
-#define AID_MOT_ATVC      9012  /* mot_atvc - This is for use of the ATVC service ONLY */
-#define AID_SPRINT_EXTENSION 9013  /* IKASANTISPRINT-149 sprint extension service */
-#define AID_MOT_DBVC      9014  /* mot_dbvc - This group is used to access DataBlock feature related data */
-#define AID_FINGERP       9015  /* IKFPS-98 Add permission group for fingerprint */
-#define AID_MOT_ESDFS     9016  /* mot_esdfs for ESDFS package list parsing */
-#define AID_POWER         9017 /* power management */
-#define AID_ITSON         9018  /* itson permission  */
-#define AID_MOT_DTV       9019 /* dtv */
-/* Motorola IDs */
-
 #define AID_EVERYBODY     9997  /* shared between all apps in the same profile */
 #define AID_MISC          9998  /* access to misc storage */
 #define AID_NOBODY        9999
@@ -216,29 +193,7 @@ static const struct android_id_info android_ids[] = {
 
     { "rfs",           AID_RFS, },
     { "rfs_shared",    AID_RFS_SHARED, },
-    /* Motorola IDs */
-    { "mot_accy",      AID_MOT_ACCY, },
-    { "mot_pwric",     AID_MOT_PWRIC, },
-    { "mot_usb",       AID_MOT_USB, },
-    { "mot_drm",       AID_MOT_DRM, },
-    { "mot_tcmd",      AID_MOT_TCMD, },
-    { "mot_sec_rtc",   AID_MOT_SEC_RTC, },
-    { "mot_tombstone", AID_MOT_TOMBSTONE, },
-    { "mot_tpapi",     AID_MOT_TPAPI, },
-    { "mot_secclkd",   AID_MOT_SECCLKD, },
-    { "mot_whisper",   AID_MOT_WHISPER, },
-    { "mot_caif",      AID_MOT_CAIF, },
-    { "mot_dlna",      AID_MOT_DLNA, },
-    { "sprint_extension", AID_SPRINT_EXTENSION, },
-    { "mot_dbvc",      AID_MOT_DBVC, },
-    { "fingerp",       AID_FINGERP, },
-    { "mot_esdfs",     AID_MOT_ESDFS, },
-    { "mot_atvc",      AID_MOT_ATVC, },
-    { "mot_esdfs",     AID_MOT_ESDFS, },
-    { "power",         AID_POWER, },
-    { "itson",         AID_ITSON, },
-    { "mot_dtv",       AID_MOT_DTV, },
-    /* Motorola IDs */
+
     { "everybody",     AID_EVERYBODY, },
     { "misc",          AID_MISC, },
     { "nobody",        AID_NOBODY, },
