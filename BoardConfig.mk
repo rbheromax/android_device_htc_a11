@@ -100,10 +100,6 @@ COMMON_GLOBAL_CFLAGS += -DHTCLOG
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 
-# RIL
-BOARD_PROVIDES_LIBRIL := true
-BOARD_RIL_CLASS := ../../../device/htc/a11/ril/
-
 # RPC
 TARGET_NO_RPC := true
 
