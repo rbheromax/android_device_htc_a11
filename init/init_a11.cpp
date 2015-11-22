@@ -34,14 +34,6 @@
 #include "log.h"
 #include "util.h"
 
-void dualsim_properties(char multisim_config[])
-{
-    property_set("persist.radio.multisim.config", multisim_config);
-    property_set("persist.radio.dont_use_dsd", "true");
-    property_set("ro.telephony.ril_class", "A11RIL");
-    property_set("ro.telephony.ril.v3", "signalstrength");
-}
-
 void gsm_properties(char default_network[])
 {
     property_set("ro.telephony.default_network", default_network);
