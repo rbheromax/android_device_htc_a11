@@ -182,10 +182,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     power.msm8226
 
-# RIL
-PRODUCT_PACKAGES += \
-    libril
-
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
