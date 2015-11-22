@@ -32,6 +32,7 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.rc \
+    init.qcom.fm.sh \
     init.qcom.usb.rc \
     ueventd.qcom.rc
 
@@ -95,10 +96,8 @@ PRODUCT_PACKAGES += \
 
 # FM radio
 PRODUCT_PACKAGES += \
-     qcom.fmradio \
-     libqcomfm_jni \
-     FM2 \
-     FMRecord
+    FMRadio \
+    libfmjni
 
 # Graphics
 PRODUCT_PACKAGES += \
