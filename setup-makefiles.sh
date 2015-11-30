@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export DEVICE=a5
+export DEVICE=a11
 export VENDOR=htc
 
 OUTDIR=vendor/$VENDOR/$DEVICE
@@ -98,7 +98,7 @@ EOF
 
 LOCAL_PATH := \$(call my-dir)
 
-ifneq (\$(filter a5,\$(TARGET_DEVICE)),)
+ifneq (\$(filter a11,\$(TARGET_DEVICE)),)
 
 include \$(CLEAR_VARS)
 LOCAL_MODULE := libtime_genoff

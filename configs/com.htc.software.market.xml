@@ -17,9 +17,6 @@
 <permissions>
     <feature name="com.htc.software.HTC" />
     <feature name="com.htc.software.Sense6.0" />
-    <feature name="com.htc.software.A5UL" />
-    <feature name="com.htc.software.Asia" />
-    <feature name="com.htc.software.WWE" />
-    <feature name="com.htc.software.PlayGroup1" />
+    <feature name="com.htc.software.A11CHL" />
     <feature name="com.htc.software.hdk" />
 </permissions>

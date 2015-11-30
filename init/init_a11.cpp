@@ -34,14 +34,6 @@
 #include "log.h"
 #include "util.h"
 
-void dualsim_properties(char multisim_config[])
-{
-    property_set("persist.radio.multisim.config", multisim_config);
-    property_set("persist.radio.dont_use_dsd", "true");
-    property_set("ro.telephony.ril_class", "A11RIL");
-    property_set("ro.telephony.ril.v3", "signalstrength");
-}
-
 void gsm_properties(char default_network[])
 {
     property_set("ro.telephony.default_network", default_network);
@@ -92,9 +84,9 @@ void vendor_load_properties()
     property_get("ro.boot.mid", bootmid);
     property_get("ro.boot.carrier", carrier);
 
-    if (strstr(bootmid, "OPCV1000")) {
+    if (strstr(bootmid, "0PCV1000")) {
         /* a11chl */
-        cdma_properties("1", "8", "310120", "Virgin Mobile");
+        cdma_properties("1", "8", "310120", "Sprint");
         property_set("ro.build.fingerprint", "htc/sprint_wwe_vm/htc_a11chl:4.4.2/KOT49H/338737.1:user/release-keys");
         property_set("ro.build.description", "1.13.652.1 CL338737 release-keys");
         property_set("ro.product.model", "HTC Desire 510");
@@ -103,7 +95,7 @@ void vendor_load_properties()
         property_set("telephony.sms.pseudo_multipart", "1");
         property_set("ro.ril.oem.ecclist", "911");
         property_set("ro.ril.set.mtusize", "1422");
-    } else if (strstr(bootmid, "OPCV2000")) {
+    } else if (strstr(bootmid, "0PCV2000")) {
         /* a11chl */
         cdma_properties("1", "8", "310120", "Boost Mobile");
         property_set("ro.build.fingerprint", "htc/Boost_wwe/htc_a11chl:4.4.2/KOT49H/338737.1:user/release-keys");

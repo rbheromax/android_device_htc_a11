@@ -2,7 +2,7 @@
 
 set -e
 
-export DEVICE=a5
+export DEVICE=a11
 export VENDOR=htc
 
 if [ $# -eq 0 ]; then

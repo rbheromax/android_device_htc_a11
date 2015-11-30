@@ -5,8 +5,6 @@
 /system/blobs/chl/bin/netmgrd	u:object_r:netmgrd_exec:s0
 /system/blobs/chl/bin/qmuxd	u:object_r:qmuxd_exec:s0
 
-/dev/block/mmcblk0p(.*)		u:object_r:mmc_block_device:s0
-
 /dev/htcdiag			u:object_r:diag_device:s0
 
 /dev/akm8963_dev		u:object_r:sensors_device:s0
@@ -28,5 +26,10 @@
 
 /data/system/default_values	u:object_r:mpctl_data_file:s0
 
-/sys/devices/virtual/graphics/fb0/rgb			u:object_r:display_sysfs:s0
 /sys/devices/virtual/timed_output/vibrator/pwm_value_1p u:object_r:vibe_dev:s0
+
+/dev/block/bootdevice/by-name/boot                          u:object_r:boot_block_device:s0
+/dev/block/bootdevice/by-name/cache                         u:object_r:cache_block_device:s0
+/dev/block/bootdevice/by-name/recovery                      u:object_r:recovery_block_device:s0
+/dev/block/bootdevice/by-name/userdata                      u:object_r:userdata_block_device:s0
+

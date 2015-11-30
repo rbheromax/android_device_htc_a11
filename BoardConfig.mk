@@ -39,28 +39,31 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
 TARGET_CPU_VARIANT := cortex-a7
-TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 zcache androidboot.bootdevice=msm_sdcc.1
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 zcache androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02008000 --tags_offset 0x01e00000
 BOARD_CUSTOM_BOOTIMG_MK := device/htc/a11/mkbootimg.mk
-TARGET_KERNEL_CONFIG := a11ul_modded_defconfig
-TARGET_KERNEL_SOURCE := kernel
+TARGET_KERNEL_CONFIG := cyanogenmod_a11ul_defconfig
+TARGET_KERNEL_SOURCE := kernel/htc/a11
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+TARGET_RIL_VARIANT := caf
+TARGET_QCOM_DISPLAY_VARIANT := caf-new
+TARGET_USES_QCOM_BSP := true
 
 # Audio
-AUDIO_FEATURE_DISABLED_MULTI_VOICE_SESSIONS := true
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
 AUDIO_FEATURE_ENABLED_HWDEP_CAL := true
 AUDIO_FEATURE_ENABLED_LOW_LATENCY_CAPTURE := true
-AUDIO_FEATURE_ENABLED_FM := true
+AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
+AUDIO_FEATURE_ENABLED_NEW_SAMPLE_RATE := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -69,8 +72,8 @@ BLUETOOTH_HCI_USE_MCT := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/a11/bluetooth
 
 # Camera
-COMMON_GLOBAL_CFLAGS += -DPROPERTY_PERMS_APPEND='{"htc.camera.sensor.", AID_CAMERA, 0}, {"camera.4k2k.", AID_MEDIA, 0}, {"persist.camera.", AID_MEDIA, 0},'
-USE_DEVICE_SPECIFIC_CAMERA := true
+# COMMON_GLOBAL_CFLAGS += -DPROPERTY_PERMS_APPEND='{"htc.camera.sensor.", AID_CAMERA, 0}, {"camera.4k2k.", AID_MEDIA, 0}, {"persist.camera.", AID_MEDIA, 0},'
+# USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Charge mode
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
@@ -92,14 +95,10 @@ TARGET_SPECIFIC_HEADER_PATH := device/htc/a11/include
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Logging
-COMMON_GLOBAL_CFLAGS += -DHTCLOG -DMOTOROLA_LOG
+COMMON_GLOBAL_CFLAGS += -DHTCLOG
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
-
-# RIL
-BOARD_PROVIDES_LIBRIL := true
-BOARD_RIL_CLASS := ../../../device/htc/a11/ril/
 
 # RPC
 TARGET_NO_RPC := true
@@ -121,15 +120,14 @@ WIFI_DRIVER_FW_PATH_AP := "ap"
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
-BOARD_CACHEIMAGE_PARTITION_SIZE := 285212672
+BOARD_CACHEIMAGE_PARTITION_SIZE := 113246208
 BOARD_RECOVERY_BLDRMSG_OFFSET := 2048
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2415919104
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 4429185024
-BOARD_FLASH_BLOCK_SIZE := 131072
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2147483648
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 1207959552
+BOARD_FLASH_BLOCK_SIZE := 512
 TARGET_RECOVERY_DEVICE_MODULES += chargeled
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
 
 # Charge mode
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
@@ -138,7 +136,6 @@ BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
 TARGET_RECOVERY_FSTAB := device/htc/a11/rootdir/etc/fstab.qcom
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
-TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_RECOVERY_SWIPE := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
@@ -146,26 +143,6 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 include device/qcom/sepolicy/sepolicy.mk
 include vendor/cm/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/htc/a11/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    akmd.te \
-    device.te \
-    file_contexts \
-    file.te \
-    init.te \
-    kernel.te \
-    mediaserver.te \
-    mm-qcamerad.te \
-    mpdecision.te \
-    platform_app.te \
-    property_contexts \
-    recovery.te \
-    rmt_storage.te \
-    system_server.te \
-    thermal-engine.te \
-    ueventd.te \
-    vibe_dev.te \
-    vold.te
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
@@ -194,9 +171,6 @@ TW_EXTERNAL_STORAGE_PATH := "/external_sd"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 TW_EXTERNAL_STORAGE_PATH := "/usb-otg"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "usb-otg"
-
-TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
 
 # inherit from the proprietary version
 -include vendor/htc/a11/BoardConfigVendor.mk
